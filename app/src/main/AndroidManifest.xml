@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mycompany.a2iga.module.sample">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/module_name"
+        android:resizeableActivity="true">
+
+        <activity
+            android:theme="@style/ModuleLaunch"
+            android:noHistory="true" 
+            android:excludeFromRecents="true" 
+            android:finishOnCloseSystemDialogs="true" 
+            android:launchMode="singleInstance" 
+            android:name=".ModuleLaunch"
+            android:label="@string/module_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:theme="@style/ModuleSettings"
+            android:name=".ModuleSettings"
+            android:label="@string/module_settings">
+            <intent-filter>
+                <!-- android.intent.action.MAIN для класса настроек модуля обязателен! -->
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <meta-data
+          android:name="android.max_aspect"
+          android:value="4.0"/>
+
+    </application>
+
+</manifest>
